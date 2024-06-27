@@ -16,6 +16,11 @@ end
 
 target 'PlanToTravel' do
   config = use_native_modules!
+    pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+    pod 'mappls-map-react-native', :path => '../node_modules/mappls-map-react-native'
+    pod 'GoogleMaps'
+pod 'Google-Maps-iOS-Utils'
+
 
   use_react_native!(
     :path => config[:reactNativePath],
