@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState,useContext} from 'react';
 import {View, TextInput, Alert, TouchableOpacity, Text} from 'react-native';
 import axios from 'axios';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
+import {AuthContext} from '../Navigation/AuthNavigation';
 
 const SignInScreen = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const {user} = useContext(AuthContext)
 
   const handleSignIn = () => {
     if (!email || !password) {
@@ -18,7 +20,7 @@ const SignInScreen = ({navigation}) => {
       .post('http://localhost:3000/api/auth/signin', {email, password})
       .then(response => {
         console.log('User signed in!');
-        navigation.navigate('HomeScreen');
+        navigation.replace('Home');
       })
       .catch(error => {
         if (error.response && error.response.status === 400) {
@@ -33,12 +35,13 @@ const SignInScreen = ({navigation}) => {
 
   return (
     <View style={{marginLeft: 20, marginRight: 20, marginTop: '20%'}}>
-      <View style={{marginTop: 0}}>
+      {/* <View style={{marginTop: 0}}>
         <TouchableOpacity onPress={() => navigation.goBack('BoardingScreen')}>
           <AntDesign name={'left'} size={30} />
         </TouchableOpacity>
-      </View>
+      </View> */}
       <View style={{marginTop: 20}}>
+        <Text>{user}</Text>
         <Text
           style={{
             fontSize: 40,
@@ -78,7 +81,7 @@ const SignInScreen = ({navigation}) => {
       </TouchableOpacity>
       <View style={styles.signupRedirectContainer}>
         <Text>Not Yet Member?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('LoginScreen')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
           <Text style={styles.signupRedirectLink}>Join Now</Text>
         </TouchableOpacity>
       </View>

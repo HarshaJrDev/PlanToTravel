@@ -8,15 +8,16 @@ import {
   ScrollView,
   KeyboardAvoidingView,
 } from 'react-native';
-import React, { useRef } from 'react';
+import React, {useRef} from 'react';
 import Feather from 'react-native-vector-icons/Feather';
 import Octicons from 'react-native-vector-icons/Octicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 import CetagoryScreen from './CetagoryScreen';
+import Hotals from '../Utils/Hotals';
 
 const HomeScreen = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   const input = useRef();
 
   const Uppdate = () => {
@@ -26,11 +27,12 @@ const HomeScreen = () => {
   };
 
   return (
-    <KeyboardAvoidingView enabled={true} behavior="padding" style={{ flex: 1 }}>
+    <KeyboardAvoidingView enabled={true} behavior="padding" style={{flex: 1}}>
       <ScrollView>
         <SafeAreaView>
-          <View style={{ padding: 15 }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+          <View style={{padding: 15}}>
+            <View
+              style={{flexDirection: 'row', justifyContent: 'space-between'}}>
               <View
                 style={{
                   backgroundColor: 'rgb(253,253,253)',
@@ -44,11 +46,17 @@ const HomeScreen = () => {
                   shadowOpacity: 0.1,
                   shadowRadius: 10,
                 }}>
-                <TouchableOpacity onPress={()=>navigation.openDrawer()}>
+                <TouchableOpacity onPress={navigation.openDrawer()}>
                   <Feather name="menu" size={30} />
                 </TouchableOpacity>
               </View>
-              <View style={{ justifyContent: 'space-evenly', display: 'flex', flexDirection: 'row' }}>
+
+              <View
+                style={{
+                  justifyContent: 'space-evenly',
+                  display: 'flex',
+                  flexDirection: 'row',
+                }}>
                 <TouchableOpacity
                   style={{
                     backgroundColor: 'rgb(253,253,253)',
@@ -66,15 +74,19 @@ const HomeScreen = () => {
                 </TouchableOpacity>
               </View>
             </View>
-            <View style={{ marginTop: 30 }}>
-              <Text style={{ fontFamily: 'Poppins-ExtraLight', fontSize: 40 }}>
+            <View style={{marginTop: 30}}>
+              <Text style={{fontFamily: 'Poppins-ExtraLight', fontSize: 40}}>
                 Explore The{' '}
               </Text>
-              <Text style={{ fontFamily: 'Poppins-ExtraBold', fontSize: 30 }}>
+              <Text style={{fontFamily: 'Poppins-ExtraBold', fontSize: 30}}>
                 Beauty Of World!
               </Text>
             </View>
-            <View style={{ marginTop: 30, flexDirection: 'row' }}>
+
+
+
+            
+            <View style={{marginTop: 30, flexDirection: 'row'}}>
               <TextInput
                 ref={input}
                 style={{
@@ -88,7 +100,7 @@ const HomeScreen = () => {
                 }}
                 placeholder="Search Places"
               />
-              <View style={{ zIndex: 10, left: -270, marginTop: 13 }}>
+              <View style={{zIndex: 10, left: -270, marginTop: 13}}>
                 <TouchableOpacity onPress={Uppdate}>
                   <Octicons name="search" size={25} />
                 </TouchableOpacity>
@@ -109,9 +121,13 @@ const HomeScreen = () => {
                   <MaterialCommunityIcons name="sort" size={25} />
                 </TouchableOpacity>
               </View>
+            
             </View>
-            <View style={{marginTop:25}}>
-              <CetagoryScreen/>
+            <View>
+                <Hotals/>
+              </View>
+            <View style={{marginTop: 25}}>
+              <CetagoryScreen />
             </View>
           </View>
         </SafeAreaView>

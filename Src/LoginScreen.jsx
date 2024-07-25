@@ -130,7 +130,7 @@ const LoginScreen = () => {
           <Text style={{textAlign: 'center', fontSize: 20}}>
             If already have account?
           </Text>
-          <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
+          <TouchableOpacity onPress={() => navigation.navigate('Sign In')}>
             <Text style={{color: '#EA9F5A', fontSize: 20}}>Login</Text>
           </TouchableOpacity>
         </View>

@@ -1,10 +1,11 @@
-import React from "react";
-import { StyleSheet, Text, View } from "react-native";
-import MapView from "react-native-maps";
+import React from 'react';
+import {StyleSheet, Text, View} from 'react-native';
+import MapView from 'react-native-maps';
 export default function App() {
+  // Default Initialization
   return (
     <View style={styles.container}>
-    {/*Render our MapView*/}
+      {/*Render our MapView*/}
       <MapView
         style={styles.map}
         //specify our coordinates.
@@ -23,8 +24,8 @@ const styles = StyleSheet.create({
   container: {
     ...StyleSheet.absoluteFillObject,
     flex: 1, //the container will fill the whole screen.
-    justifyContent: "flex-end",
-    alignItems: "center",
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
   map: {
     ...StyleSheet.absoluteFillObject,

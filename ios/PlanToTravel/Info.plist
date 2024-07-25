@@ -87,12 +87,14 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
-	<key>NSLocationWhenInUseUsageDescription</key>
-<string>We need your location to show your current position on the map.</string>
-<key>NSLocationAlwaysUsageDescription</key>
-<string>We need your location to show your current position on the map even when the app is in the background.</string>
-<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-<string>We need your location to show your current position on the map.</string>
 
+
+        <key>NSLocationWhenInUseUsageDescription</key>
+        <string>App wants to access your location</string>
+        <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+        <string>App wants to access your location</string>
+    
+
+	
 </dict>
 </plist>
